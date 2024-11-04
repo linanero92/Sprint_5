@@ -22,6 +22,4 @@ class DataGenerate():
 
 
 data_generate = DataGenerate()
-name = data_generate.generate_random_name()
-email = data_generate.generate_random_email()
-password = data_generate.generate_random_password()
+

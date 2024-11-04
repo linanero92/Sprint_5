@@ -22,6 +22,7 @@
 * SEARCH_LOGOUT_BUTTON - Поиск кнопки выхода из аккаунта в Личном кабинете
 * SEARCH_CONSTRUCTOR_VIA_ACCOUNT - Поиск ссылки на Конструктор через Личный кабинет
 * SEARCH_LOGO - Поиск ссылки перехода на Конструктор через ссылку на Логотип
+* SEARCH_BUNS_SECTION - Переход в раздел "Булки"
 * SEARCH_SAUCES_SECTION - Переход в раздел "Соусы"
 * SEARCH_FILLINGS_SECTION - Переход в раздел "Начинки"
 * SEARCH_FIRST_SAUCE_IN_CONSTRUCTOR - Поиск ссылки на первый элемент "Соус Spicy-X" в разделе "Соусы"

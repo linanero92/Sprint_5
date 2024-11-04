@@ -1,5 +1,5 @@
 from helpers import *
-from locators import *
+from locators import TestLocators
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 
@@ -15,15 +15,15 @@ class TestRegister:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located(TestLocators.SEARCH_REGISTER_NAME_INPUT)
         )
-        driver.find_element(*TestLocators.SEARCH_REGISTER_NAME_INPUT).send_keys(name)
-        driver.find_element(*TestLocators.SEARCH_REGISTER_EMAIL_INPUT).send_keys(email)
-        driver.find_element(*TestLocators.SEARCH_REGISTER_PASSWORD_INPUT).send_keys(password)
+        driver.find_element(*TestLocators.SEARCH_REGISTER_NAME_INPUT).send_keys(data_generate.generate_random_name())
+        driver.find_element(*TestLocators.SEARCH_REGISTER_EMAIL_INPUT).send_keys(data_generate.generate_random_email())
+        driver.find_element(*TestLocators.SEARCH_REGISTER_PASSWORD_INPUT).send_keys(
+            data_generate.generate_random_password())
         driver.find_element(*TestLocators.SEARCH_REGISTER_BUTTON).click()
         WebDriverWait(driver, 5).until(
             expected_conditions.visibility_of_element_located(TestLocators.SEARCH_LOGIN_BUTTON)
         )
         assert driver.find_element(*TestLocators.SEARCH_LOGIN_BUTTON).text == "Войти"
-        driver.quit()
 
     def test_do_register_with_incorrect_password(self, driver):
         driver.get('https://stellarburgers.nomoreparties.site')
@@ -37,12 +37,11 @@ class TestRegister:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located(TestLocators.SEARCH_REGISTER_NAME_INPUT)
         )
-        driver.find_element(*TestLocators.SEARCH_REGISTER_NAME_INPUT).send_keys(name)
-        driver.find_element(*TestLocators.SEARCH_REGISTER_EMAIL_INPUT).send_keys(email)
+        driver.find_element(*TestLocators.SEARCH_REGISTER_NAME_INPUT).send_keys(data_generate.generate_random_name())
+        driver.find_element(*TestLocators.SEARCH_REGISTER_EMAIL_INPUT).send_keys(data_generate.generate_random_email())
         driver.find_element(*TestLocators.SEARCH_REGISTER_PASSWORD_INPUT).send_keys(12345)
         driver.find_element(*TestLocators.SEARCH_REGISTER_BUTTON).click()
         WebDriverWait(driver, 5).until(
             expected_conditions.visibility_of_element_located(TestLocators.SEARCH_ERROR_INVALID_PASSWORD)
         )
         assert driver.find_element(*TestLocators.SEARCH_ERROR_INVALID_PASSWORD).text == "Некорректный пароль"
-

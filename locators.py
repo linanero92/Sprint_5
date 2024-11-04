@@ -36,11 +36,13 @@ class TestLocators:
     SEARCH_CONSTRUCTOR_VIA_ACCOUNT = (
         By.XPATH, '//a[contains(@class, "AppHeader_header__link")]//p[text()="Конструктор"]')
     SEARCH_LOGO = (By.XPATH, '//div[contains(@class, "AppHeader_header__logo")]/a')
-    SEARCH_SAUCES_SECTION = (By.XPATH, '//div[contains(@class, "tab_tab")]//span[text()="Соусы"]')
-    SEARCH_FILLINGS_SECTION = (By.XPATH, '//div[contains(@class, "tab_tab") and ./span[text()="Начинки"]]')
+    SEARCH_SAUCES_SECTION = (By.XPATH,
+                             '//div[contains(@class, "tab_tab")]//span[text()="Соусы"]')
     SEARCH_FIRST_SAUCE_IN_CONSTRUCTOR = (
-        By.XPATH, '//a[contains(@class, "BurgerIngredient_ingredient")]//p[text()="Соус Spicy-X"]')
-    SEARCH_FIRST_BUN_IN_CONSTRUCTOR = (
-        By.XPATH, '//a[contains(@class, "BurgerIngredient_ingredient")]//p[text()="Флюоресцентная булка R2-D3"]')
+        By.XPATH,
+        '//div[contains(@class, "tab_tab") and contains(@class, "tab_tab_type_current")]//span[text()="Соусы"]/ancestor::section//a[contains(@class, "BurgerIngredient_ingredient")]//p[text()="Соус Spicy-X"]')
+    SEARCH_BUNS_SECTION = (By.XPATH, '//div[contains(@class, "tab_tab")]//span[text()="Булки"]')
+    SEARCH_FIRST_BUN_IN_CONSTRUCTOR = (By.XPATH, '//div[contains(@class, "tab_tab") and contains(@class, "tab_tab_type_current")]//span[text()="Булки"]/ancestor::section//a[contains(@class, "BurgerIngredient_ingredient")]//p[text()="Флюоресцентная булка R2-D3"]')
+    SEARCH_FILLINGS_SECTION = (By.XPATH, '//div[contains(@class, "tab_tab")]//span[text()="Начинки"]')
     SEARCH_FIRST_FILLING_IN_CONSTRUCTOR = (By.XPATH,
-                                           '//a[contains(@class, "BurgerIngredient_ingredient")]//p[text()="Мясо бессмертных моллюсков Protostomia"]')
+                                           '//div[contains(@class, "tab_tab") and contains(@class, "tab_tab_type_current")]//span[text()="Начинки"]/ancestor::section//a[contains(@class, "BurgerIngredient_ingredient")]//p[text()="Мясо бессмертных моллюсков Protostomia"]')
